@@ -1,4 +1,5 @@
 ﻿;Normal sale, assumes already logged in
+;The item added to the sale needs to cost more than $1
 
 Alias scanfield 60 674
 Alias complete_sale 1758 740

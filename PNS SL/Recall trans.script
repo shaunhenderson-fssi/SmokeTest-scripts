@@ -10,10 +10,13 @@ Sleep 500
 assert button recall_trans "Recall suspended transaction"
 MouseClick recall_trans
 ;dialog box opens asking to enter 10 digit barcode, we dont have one
+Sleep 200
 
 assert button search_button "Search"
 ClickButton "Suspended transactions" "Search"
 ;list opens showing all suspended transactions, just click ok because last one is highlighted already
+Sleep 200
+
 ClickButton "Select a transaction" "OK"
 Sleep 1000
 

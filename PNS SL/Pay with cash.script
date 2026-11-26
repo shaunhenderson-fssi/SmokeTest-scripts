@@ -2,7 +2,7 @@
 //Call this from another script like this: Load "Pay with cash"
 
 Alias "Complete sale" 1758 740
-Alias dialog 506 366
+Alias cash_dialog 506 366
 Alias top_button 552 173
 Alias "Print least" 484 250
 
@@ -13,9 +13,9 @@ MouseClick "Complete sale"
 Sleep 1000
 
 ;asks for Club+ card
-Assert memo dialog "Club+ card If your customer has a Club+ card, ask them to scan it now on the Customer Scanner"
+Assert memo cash_dialog "Club+ card If your customer has a Club+ card, ask them to scan it now on the Customer Scanner"
 ClickButton "formDlg" "No Card"
-Sleep 100
+Sleep 300
 
 ClickButton Payment OK ;this auto selects Cash
 Sleep 100

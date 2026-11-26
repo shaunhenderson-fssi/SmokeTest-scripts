@@ -1,0 +1,48 @@
+﻿;Normal sale, assumes already logged in
+
+Alias scanfield 60 674
+Alias complete_sale 1758 740
+Alias dialog 506 366
+Alias vendor_coupon 97 539
+Alias "Amount tendered" 451 394
+Alias cash 45 138
+Alias payment_choices_top 552 173
+Alias print_least 484 250
+
+Assert color 86 13 #000091 ;ensures someone is logged in
+
+Mouseclick scanfield
+TypeText 5413121360772 ;belgian choc
+PressKey Enter
+Sleep 5000
+
+MouseClick complete_sale
+sleep 1000
+
+Assert memo dialog "Club+ card If your customer has a Club+ card, ask them to scan it now on the Customer Scanner"
+ClickButton formDlg "No Card"
+Sleep 200
+
+////////// START VENDOR COUPON //////////
+
+MouseClick vendor_coupon
+ClickButton Payment OK
+Sleep 500
+
+MouseClick "Amount tendered" //this is the input box for the amount
+PressKey Backspace
+PressKey Backspace
+PressKey Backspace
+PressKey Backspace
+PressKey Backspace
+TypeText 100
+ClickButton "Vendor Coupon" OK
+Sleep 200
+
+////////// START CASH //////////
+
+MouseClick cash
+ClickButton Payment OK
+MouseClick payment_choices_top
+MouseClick print_least
+Sleep 1000 ;allows time to complete the sale, ready for next test

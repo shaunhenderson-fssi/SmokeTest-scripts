@@ -1,0 +1,11 @@
+﻿;Normal sale, assumes already logged in
+
+Alias scanfield 90 674
+
+Assert color 86 13 #000091 ;ensures someone is logged in
+Mouseclick scanfield
+TypeText 9414982020900 ;kenya bold
+PressKey Enter
+Sleep 5000
+
+Load "Pay with cash"

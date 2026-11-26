@@ -1,0 +1,25 @@
+﻿;Suspend transaction
+Alias ScanField 90 674
+Alias dialog 506 366
+
+Assert color 86 13 #000091 ;ensures someone is logged in
+
+MouseClick ScanField 
+TypeText 9414982020900 ;kenya bold
+PressKey Enter
+Sleep 5000
+
+ClickButton Transact
+Sleep 1000
+
+ClickButton "Select an option" "Suspend transaction"
+MouseClick 451 394 ;Optional reason/customer reference
+TypeText "Testing"
+ClickButton "Enter data" "OK"
+Sleep 500
+
+Assert memo dialog "Please ask customer to sign the duplicate receipt"
+ClickButton FormDlg Ok
+Sleep 500; give time to do its thing, ready for next sale
+
+//now run the recall suspended trans script

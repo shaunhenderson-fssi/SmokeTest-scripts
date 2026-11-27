@@ -26,8 +26,6 @@ PressKey Enter
 Sleep 5000
 
 assert memo dialog "Only 2 items are permitted per sale."
-MouseClick 482 476 ; OK
+ClickButton formDlg OK
 
 Load "Pay with cash"
- 
-Sleep 2000;allows time to complete the sale, ready for next test

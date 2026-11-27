@@ -15,7 +15,7 @@ Sleep 1000
 ClickButton "Select an option" "Suspend transaction"
 MouseClick 451 394 ;Optional reason/customer reference
 TypeText "Testing"
-ClickButton "Enter data" "OK"
+ClickButton "Enter data" OK
 Sleep 500
 
 Assert memo dialog "Please ask customer to sign the duplicate receipt"

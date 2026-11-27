@@ -7,7 +7,8 @@ rem Note there is no end slash
 
 rem This is all of the scripts that will be run in this test suite
 for %%S in (
-    "Normal sale - PNS.script"
+    "Normal sale - No Club card.script"
+    "Normal sale - Club card.script"
     "Suspend trans.script"
     "Recall trans.script"
     "Age restricted (allow).script"

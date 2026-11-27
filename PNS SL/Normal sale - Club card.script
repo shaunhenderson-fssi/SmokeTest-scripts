@@ -1,0 +1,40 @@
+;Normal sale, assumes already logged in
+
+Alias scanfield 90 674
+
+Assert color 86 13 #000091 ;ensures someone is logged in
+Assert color 835 640 #f0f0f0 ;ensure no club card
+Mouseclick scanfield
+TypeText 9414982020900 ;kenya bold
+PressKey Enter
+Sleep 5000
+
+//add in Club+ card
+TypeText 6059174200000008 ;club+ card
+PressKey Enter
+Sleep 2000 ;give time to load balance and graphic
+
+Assert color 835 640 #a59ae9 ;ensure club card present, purple logo
+Assert color 803 648 #181913 ;ensure club card present, black C
+
+//Now pay with cash
+
+Alias "Complete sale" 1758 740
+Alias cash_dialog 506 366
+Alias top_button 552 173
+Alias "Print least" 470 290
+
+//complete cash payment
+//assumes there is at least 1 item in the sale
+
+MouseClick "Complete sale"
+Sleep 1000
+
+ClickButton Payment OK ;this auto selects Cash
+Sleep 1000
+
+MouseClick top_button
+Sleep 2000
+
+MouseClick "Print least"
+Sleep 1000 ;allows time to complete the sale, ready for next test

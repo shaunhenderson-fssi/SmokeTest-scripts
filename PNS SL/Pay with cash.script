@@ -24,6 +24,4 @@ MouseClick top_button
 Sleep 100
 
 MouseClick "Print least"
-Sleep 500
-
 Sleep 1000 ;allows time to complete the sale, ready for next test
